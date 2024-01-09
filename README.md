@@ -70,7 +70,6 @@ SOFTWARE.
 
 ## Contact
 #### Email: mkmladwani@hotmail.com
-#### Discord: MK3#1111
 ---
 
 *Note: This script is provided as-is with no guarantees. Please ensure you test it in your environment before using it in production.*
