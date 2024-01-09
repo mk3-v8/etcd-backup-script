@@ -48,6 +48,6 @@ ETCDCTL_API=3 etcdctl snapshot restore "$UNCOMPRESSED_FILE" \
   --data-dir="$NEW_ETCD_DATA_DIR"
 
 systemctl start etcd
-
+rm -f "$UNCOMPRESSED_FILE"
 echo "Backup restored successfully from $FULL_RESTORE_FILE"
 
