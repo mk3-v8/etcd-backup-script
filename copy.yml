@@ -8,5 +8,10 @@
         src: ./etcd_backup_script.sh
         dest: /opt/etcd_backup_script.sh
         mode: '0755'
+    - name: Copy ETCD Restore Script to Nodes
+      copy:
+        src: ./restore_etcd_backup.sh
+        dest: /opt/restore_etcd_backup.sh
+        mode: '0755'
     - name: Execute ETCD Backup Script
       command: /opt/etcd_backup_script.sh
