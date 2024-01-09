@@ -1,0 +1,24 @@
+---
+- name: ETCD Restore Playbook
+  hosts: etcd_nodes
+  become: yes
+  vars_prompt:
+    - name: "backup_file"
+      prompt: "Enter the name of the backup file to restore"
+      private: no
+
+  tasks:
+    - name: List available backups in the backup directory
+      shell: ls /var/lib/etcd/k8s_etcd_backup
+      register: backups
+      changed_when: false
+    - name: Display backup files
+      debug:
+        msg: "{{ backups.stdout_lines }}"
+    - name: Pause for user input
+      pause:
+        prompt: "List of available backups is above. Please enter the name of the backup file you want to restore (e.g., etcd-backup-2024-01-09_11:01PM.db.gz)."
+      register: user_input
+    - name: Execute ETCD Restore Script
+      command: /opt/restore_etcd_backup.sh "{{ backup_file }}"
+      when: backup_file != ""
