@@ -14,4 +14,5 @@
         dest: /opt/restore_etcd_backup.sh
         mode: '0755'
     - name: Execute ETCD Backup Script
-      command: /opt/etcd_backup_script.sh
+      shell:
+        cmd: /opt/etcd_backup_script.sh
