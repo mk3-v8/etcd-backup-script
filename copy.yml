@@ -1,0 +1,12 @@
+---
+- name: Deploy and Execute ETCD Backup Script
+  hosts: etcd_nodes
+  become: yes
+  tasks:
+    - name: Copy ETCD Backup Script to Nodes
+      copy:
+        src: ./etcd_backup_script.sh
+        dest: /opt/etcd_backup_script.sh
+        mode: '0755'
+    - name: Execute ETCD Backup Script
+      command: /opt/etcd_backup_script.sh
