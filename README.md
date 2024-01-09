@@ -10,19 +10,22 @@ This script is designed for performing backups of the ETCD database on Kubernete
 - Automatically add itself to a cronjob for scheduled backups.
 
 ## Prerequisites
-- Access to a Kubernetes environment with ETCD.
+- Root access to a Kubernetes environment with ETCD (Masters).
 - Required tools: etcdctl, gzip, crontab, and standard Linux utilities (date, find, etc.).
-- Appropriate permissions to read ETCD data and write to the backup directory.
-- Root access to the masters.
 
 ## Installation
 1. Clone the repository:
+```
    git clone https://github.com/mk3-v8/etcd-backup-script.git
+```
 2. Navigate to the script directory:
+```
    cd etcd-backup-script
+```
 3. Make the script executable:
+```
    chmod +x etcd_backup_script.sh
-
+```
 ## Usage
 ### Performing a Backup
 Run the script to perform a backup and add it in cronjobs:
