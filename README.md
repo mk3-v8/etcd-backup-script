@@ -1,36 +1,36 @@
-# ETCD Backup Script
+# ETCD Backup and Restore Scripts
 
 ## Overview
-This script is designed for performing backups of the ETCD database on Kubernetes environments. It handles the creation of timestamped backup files, compresses them, and manages the retention of these backups by deleting older files.
+This repository contains scripts for backing up and restoring the ETCD database in Kubernetes environments. These scripts facilitate the creation of timestamped backup files, handle their compression, and manage the retention of these backups by deleting older files.
 
 ## Features
-- Creates a timestamped ETCD backup.
-- Compresses the backup file.
-- Manages backup retention by deleting files older than a specified number of days.
-- Automatically add itself to a cronjob for scheduled backups.
+- Automated backup of ETCD database.
+- Backup file compression.
+- Backup retention management.
+- Ansible playbook for easy deployment and execution.
+- Restoration script for ETCD data.
 
 ## Prerequisites
 - Root access to a Kubernetes environment with ETCD (Masters).
 - Required tools: etcdctl, gzip, crontab, and standard Linux utilities (date, find, etc.).
+- Ansible for running playbooks.
 
 ## Installation
 1. Clone the repository:
 ```
    git clone https://github.com/mk3-v8/etcd-backup-script.git
-```
-2. Navigate to the script directory:
-```
    cd etcd-backup-script
 ```
-3. Make the script executable:
-```
-   chmod +x etcd_backup_script.sh
-```
 ## Usage
-### Performing a Backup
-Run the script to perform a backup and add it in cronjobs:
+### Backup
+Deploy and run the backup script using Ansible:
 ```
-./etcd_backup_script.sh
+ansible-playbook backup-playbook.yml
+```
+### Restore
+List backups and prompt for the backup file to restore:
+```
+ansible-playbook restore-playbook.yml
 ```
 
 ### Environment Variables (optional)
