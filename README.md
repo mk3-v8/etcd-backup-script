@@ -43,6 +43,9 @@ You can modify the CRON_SCHEDULE variable within the script to set a custom sche
 ## Contribution
 Contributions to this script are welcome. Please fork the repository and submit a pull request with your changes.
 
+## Tested
+Tested in Kubespray Kubernetes Deployment Version v1.25.6
+
 ## License
 
 MIT License
@@ -52,8 +55,5 @@ Copyright (c) 2024 Mohammed Aladwani
 ## Contact
 #### Email: mkmladwani@hotmail.com
 ---
-
-## Tested
-Tested in Kubespray Kubernetes Deployment Version v1.25.6
 
 *Note: This script is provided as-is with no guarantees. Please ensure you test it in your environment before using it in production.*
