@@ -54,6 +54,6 @@ Copyright (c) 2024 Mohammed Aladwani
 ---
 
 ## Tested
-#### Tested in Kubespray Kubernetes Deployment Version v1.25.6
+Tested in Kubespray Kubernetes Deployment Version v1.25.6
 
 *Note: This script is provided as-is with no guarantees. Please ensure you test it in your environment before using it in production.*
