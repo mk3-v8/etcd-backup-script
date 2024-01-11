@@ -25,12 +25,12 @@ This repository contains scripts for backing up and restoring the ETCD database 
 ### Backup
 Deploy and run the backup script using Ansible:
 ```
-ansible-playbook backup-playbook.yml
+ansible-playbook copy.yml
 ```
 ### Restore
 List backups and prompt for the backup file to restore:
 ```
-ansible-playbook restore-playbook.yml
+ansible-playbook restore.yml
 ```
 
 ### Environment Variables (optional)
