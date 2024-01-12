@@ -27,7 +27,7 @@ fi
 
 BACKUP_FILE="$BACKUP_DIR/etcd-backup-$(date +%Y-%m-%d_%I:%M%p).db"
 
-ETCDCTL_API=3 etcdctl snapshot save $BACKUP_FILE \
+ETCDCTL_API=3 /usr/local/bin/etcdctl snapshot save $BACKUP_FILE \
   --endpoints=$ETCD_ENDPOINTS \
   --cacert=$CA_CERT \
   --cert=$CERT_MODIFIED \
