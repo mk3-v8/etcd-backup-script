@@ -9,8 +9,8 @@ NEW_ETCD_DATA_DIR="/var/lib/etcd_restore"
 ETCD_ENDPOINTS="https://127.0.0.1:2379"
 CA_CERT="/etc/ssl/etcd/ssl/ca.pem"
 SHORT_HOSTNAME=$(hostname | cut -d'.' -f1)
-CERT="/etc/ssl/etcd/ssl/member-xxxxxxxxx.dev.local.pem"
-KEY="/etc/ssl/etcd/ssl/member-xxxxxxxxx.dev.local-key.pem"
+CERT="/etc/ssl/etcd/ssl/member-xxxxxxxxx.pem"
+KEY="/etc/ssl/etcd/ssl/member-xxxxxxxxx-key.pem"
 CERT_MODIFIED=$(echo "$CERT" | sed "s/xxxxxxxxx/$SHORT_HOSTNAME/")
 KEY_MODIFIED=$(echo "$KEY" | sed "s/xxxxxxxxx/$SHORT_HOSTNAME/")
 if [ -z "$RESTORE_FILE" ]; then
